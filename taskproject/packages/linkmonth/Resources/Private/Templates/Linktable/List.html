@@ -1,42 +1,30 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-<f:layout name="Default" />
+<html
+  xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+  data-namespace-typo3-fluid="true"
+>
+  <f:layout name="Default" />
 
-This template is responsible for creating a table of domain objects.
+  This template is responsible for creating a table of domain objects. If you
+  modify this template, do not forget to change the overwrite settings in
+  /Configuration/ExtensionBuilder/settings.yaml: Resources: Private: Templates:
+  Linktable: List.html: keep Otherwise your changes will be overwritten the next
+  time you save the extension in the extension builder
 
-If you modify this template, do not forget to change the overwrite settings
-in /Configuration/ExtensionBuilder/settings.yaml:
-  Resources:
-    Private:
-      Templates:
-        Linktable:
-          List.html: keep
-
-Otherwise your changes will be overwritten the next time you save the extension in the extension builder
-
-<f:section name="content">
-    <h1>Listing for Linktable</h1>
-
+  <f:section name="content">
     <f:flashMessages />
-
-    <table class="tx_linkmonth">
-        <tr>
-            <th><f:translate key="tx_linkmonth_domain_model_linktable.link_url" /></th>
-            <th><f:translate key="tx_linkmonth_domain_model_linktable.link_text" /></th>
-            <th><f:translate key="tx_linkmonth_domain_model_linktable.month" /></th>
-            <th></th>
-            <th></th>
-        </tr>
+    <f:if condition="{linktables}">
+      <header>
+        <h2>Link of the month</h2>
+      </header>
+      <div class="tx_linkmonth">
         <f:for each="{linktables}" as="linktable">
-            <tr>
-                <td><f:link.action action="show" arguments="{linktable : linktable}">{linktable.linkUrl}</f:link.action></td>
-                <td><f:link.action action="show" arguments="{linktable : linktable}">{linktable.linkText}</f:link.action></td>
-                <td><f:link.action action="show" arguments="{linktable : linktable}">{linktable.month}</f:link.action></td>
-                <td><f:link.action action="edit" arguments="{linktable : linktable}">Edit</f:link.action></td>
-                <td><f:link.action action="delete" arguments="{linktable : linktable}">Delete</f:link.action></td>
-            </tr>
+          <f:if condition="{linktable.linkUrl}">
+            <f:link.typolink parameter="{linktable.linkUrl}" target="_blank">
+              {linktable.linkText}
+            </f:link.typolink>
+          </f:if>
         </f:for>
-    </table>
-
-    <f:link.action action="new">New Linktable</f:link.action>
-</f:section>
+      </div>
+    </f:if>
+  </f:section>
 </html>

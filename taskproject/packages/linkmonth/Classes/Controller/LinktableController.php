@@ -43,7 +43,26 @@ class LinktableController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContro
     public function listAction(): \Psr\Http\Message\ResponseInterface
     {
         $linktables = $this->linktableRepository->findAll();
-        $this->view->assign('linktables', $linktables);
+        // Get Current Month 
+        $currentMonth = date('m');
+        //The final Link Table after the test between the current month and a Value of Month from Links 
+        $linktables_temp = array();
+        $linktables_final = array();
+        foreach ($linktables as $value) {
+            
+           if($value->getMonth() == $currentMonth){
+            array_push($linktables_temp, $value);
+           }
+        }
+
+        // get just one row if many Links in one Month
+        if(count($linktables_temp) > 1){
+            array_push($linktables_final, $linktables_temp[0]);
+            $this->view->assign('linktables', $linktables_final);
+        }else{ // when we have just one Link or no Link 
+            
+            $this->view->assign('linktables', $linktables_temp);
+        }
         return $this->htmlResponse();
     }
 }
