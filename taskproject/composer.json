@@ -17,6 +17,7 @@
 		"gridelementsteam/gridelements": "^11.1",
 		"helhum/typo3-console": "^7.0.2",
 		"laxap/bootstrap-grids": "^3.0",
+		"linkmonth/linkmonth": "@dev",
 		"mkhbasic/mkhbasic": "@dev",
 		"typo3/cms-backend": "^11.5.0",
 		"typo3/cms-belog": "^11.5.0",

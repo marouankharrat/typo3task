@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:linkmonth/Resources/Private/Language/locallang_csh_tx_linkmonth_domain_model_linktable.xlf" date="2023-11-29T11:34:02Z" product-name="linkmonth">
+		<header/>
+		<body>
+			<trans-unit id="link_url.description" resname="link_url.description">
+				<source>linkUrl</source>
+			</trans-unit>
+			<trans-unit id="link_text.description" resname="link_text.description">
+				<source>linkText</source>
+			</trans-unit>
+			<trans-unit id="month.description" resname="month.description">
+				<source>month</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:linkmonth/Resources/Private/Language/locallang_db.xlf" date="2023-11-29T11:34:02Z" product-name="linkmonth">
+		<header/>
+		<body>
+			<trans-unit id="tx_linkmonth_domain_model_linktable" resname="tx_linkmonth_domain_model_linktable">
+				<source>Linktable</source>
+			</trans-unit>
+			<trans-unit id="tx_linkmonth_domain_model_linktable.description" resname="tx_linkmonth_domain_model_linktable.description">
+				<source>Linktable</source>
+			</trans-unit>
+			<trans-unit id="tx_linkmonth_domain_model_linktable.link_url" resname="tx_linkmonth_domain_model_linktable.link_url">
+				<source>Link Url</source>
+			</trans-unit>
+			<trans-unit id="tx_linkmonth_domain_model_linktable.link_url.description" resname="tx_linkmonth_domain_model_linktable.link_url.description">
+				<source>Link Url</source>
+			</trans-unit>
+			<trans-unit id="tx_linkmonth_domain_model_linktable.link_text" resname="tx_linkmonth_domain_model_linktable.link_text">
+				<source>Link Text</source>
+			</trans-unit>
+			<trans-unit id="tx_linkmonth_domain_model_linktable.link_text.description" resname="tx_linkmonth_domain_model_linktable.link_text.description">
+				<source>Link Text</source>
+			</trans-unit>
+			<trans-unit id="tx_linkmonth_domain_model_linktable.month" resname="tx_linkmonth_domain_model_linktable.month">
+				<source>Month</source>
+			</trans-unit>
+			<trans-unit id="tx_linkmonth_domain_model_linktable.month.description" resname="tx_linkmonth_domain_model_linktable.month.description">
+				<source>Month</source>
+			</trans-unit>
+			<trans-unit id="tx_linkmonth_linklist.name" resname="tx_linkmonth_linklist.name">
+				<source>Linktable</source>
+			</trans-unit>
+			<trans-unit id="tx_linkmonth_linklist.description" resname="tx_linkmonth_linklist.description">
+				<source></source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

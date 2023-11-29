@@ -1,0 +1,46 @@
+{
+    "name": "linkmonth/linkmonth",
+    "type": "typo3-cms-extension",
+    "description": "Extension of Link of the Month, just display one Link in Month if exist.",
+    "authors": [
+        {
+            "name": "Marouan Kharrat",
+            "role": "Developer"
+        }
+    ],
+    "license": "GPL-2.0-or-later",
+    "require": {
+        "typo3/cms-core": "^11.5"
+    },
+    "require-dev": {
+        "typo3/testing-framework": "^6.9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Linkmonth\\Linkmonth\\": "Classes"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Linkmonth\\Linkmonth\\Tests\\": "Tests"
+        }
+    },
+    "replace": {
+        "typo3-ter/linkmonth": "self.version"
+    },
+    "config": {
+        "vendor-dir": ".Build/vendor",
+        "bin-dir": ".Build/bin"
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "TYPO3\\TestingFramework\\Composer\\ExtensionTestEnvironment::prepare"
+        ]
+    },
+    "extra": {
+        "typo3/cms": {
+            "web-dir": ".Build/Web",
+            "extension-key": "linkmonth"
+        }
+    }
+}

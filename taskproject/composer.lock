@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d1957c2d3e2f2bf189160f17a0038de6",
+    "content-hash": "f4d257ad61b28e9e3d0c8f5c2c4036ee",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -1566,6 +1566,59 @@
                 "source": "https://github.com/laxap/bootstrap_grids/tree/3.0.0"
             },
             "time": "2023-09-17T12:59:22+00:00"
+        },
+        {
+            "name": "linkmonth/linkmonth",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "./packages/linkmonth",
+                "reference": "c59e899a7a324fb44964d4bad9710e7f71126b0c"
+            },
+            "require": {
+                "typo3/cms-core": "^11.5"
+            },
+            "replace": {
+                "typo3-ter/linkmonth": "self.version"
+            },
+            "require-dev": {
+                "typo3/testing-framework": "^6.9.0"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/cms": {
+                    "web-dir": ".Build/Web",
+                    "extension-key": "linkmonth"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Linkmonth\\Linkmonth\\": "Classes"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Linkmonth\\Linkmonth\\Tests\\": "Tests"
+                }
+            },
+            "scripts": {
+                "post-autoload-dump": [
+                    "TYPO3\\TestingFramework\\Composer\\ExtensionTestEnvironment::prepare"
+                ]
+            },
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Marouan Kharrat",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Extension of Link of the Month, just display one Link in Month if exist.",
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "lolli42/finediff",
@@ -7306,6 +7359,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "linkmonth/linkmonth": 20,
         "mkhbasic/mkhbasic": 20
     },
     "prefer-stable": false,
