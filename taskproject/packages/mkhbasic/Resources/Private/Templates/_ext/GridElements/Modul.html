@@ -1,0 +1,29 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<{f:if(condition:'{data.flexform_isArticle} == 1',then:'article',else:'div')} id="c{data.uid}"  class="type_{data.flexform_sectionCSS} clearfix uk-section {data.flexform_addclass} {f:if(condition:'{data.flexform_center}==1',then:' uk-background-center ')}{f:if(condition:'{data.flexform_sectionColor}==0', then:' uk-background-center uk-background-no-color')}{f:if(condition:'{data.flexform_sectionColor}==10', then:' uk-background-center  uk-background-white')}{f:if(condition:'{data.flexform_sectionColor}==1', then:' uk-section-green uk-preserve-color uk-background-gray_light')}{f:if(condition:'{data.flexform_sectionColor}==2', then:' uk-section-green uk-section-green_no_padding uk-preserve-color uk-background-gray_light')}{f:if(condition:'{data.flexform_sectionColor}==3', then:' mkh-gray')}{f:if(condition:'{data.flexform_sectionColor}==4', then:' body-color_dependency')}{f:if(condition:'{data.flexform_sectionColor}==5', then:' mkh-dunkel-gray')}{f:if(condition:'{data.space_before_class}',then:' frame-space-before-{data.space_before_class}')}{f:if(condition:'{data.space_after_class}',then:' frame-space-after-{data.space_after_class}')}">
+<div class="uk-inline uk-width-1-1">
+<f:if condition="{data.flexform_center} == 1">
+    <f:then>
+        <div class="uk-container {f:if(condition:'{data.flexform_smallcenter} == 1', then: ' uk-container-small ')}" uk-scrollspy="cls: uk-animation-fade; repeat: true">
+    </f:then>
+</f:if>
+    <f:if condition="{children}">
+        <f:then>
+            <a id="c{data.uid}"></a>
+            <f:if condition="{data._LOCALIZED_UID}">
+                <a id="c{data._LOCALIZED_UID}"></a>
+            </f:if>
+            <f:render partial="Container" arguments="{_all}" optional="true"/>
+        </f:then>
+        <f:else>
+            <f:if condition="{data.CType}">
+                <f:cObject typoscriptObjectPath="tt_content.{data.CType}" data="{data}" table="tt_content" />
+            </f:if>
+        </f:else>
+    </f:if>
+<f:if condition="{data.flexform_center} == 1">
+    <f:then>
+        </div>
+     </f:then>
+</f:if>
+</div>
+</{f:if(condition:'{data.flexform_isArticle} == 1',then:'article',else:'div')}>

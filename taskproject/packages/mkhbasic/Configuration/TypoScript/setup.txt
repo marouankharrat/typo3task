@@ -1,0 +1,418 @@
+#
+# Config
+#
+config {
+    no_cache = 0
+	baseUrl = http://localhost:8888/typo3task/typo3task/taskproject/public/
+    #linkVars = L
+    uniqueLinkVars = 1
+    sys_language_uid = 0
+    #sys_language_overlay = 0
+    language = de
+    locale_all = de_DE
+    htmlTag_setParams = lang="de" dir="ltr" class="no-js"
+    linkVars = L(0-1)
+    defaultGetVars.L = 0
+}
+
+
+#
+# Logo 
+#
+lib.logoTest = IMAGE
+lib.logoTest {
+	
+	file = /fileadmin/user_upload/Logo/Logo_TYPO3.svg
+	altText = Typo3 Aufgabe
+	params = id="logo"
+	stdWrap.typolink.parameter = {$pid.navigation.home}
+}
+
+#
+# Plugin
+#
+
+plugin {
+    tx_mkhbasic {
+        view {
+            layoutRootPaths.10 = {$plugin.tx_mkhbasic.view.layoutRootPaths.10}
+            partialRootPaths.10 = {$plugin.tx_mkhbasic.view.partialRootPaths.10}
+            templateRootPaths.10 = {$plugin.tx_mkhbasic.view.templateRootPaths.10}
+        }
+    }
+}
+
+
+#
+#  tx_frontend
+#
+plugin.tx_frontend._CSS_DEFAULT_STYLE >
+
+
+#
+# Current ID of selected page
+#
+page.bodyTag >
+
+page.bodyTagCObject = TEXT
+page.bodyTagCObject.field = uid
+page.bodyTagCObject.wrap = <body id="page-|" > 
+
+
+#
+# page configurations
+#
+
+page=PAGE
+page {
+   
+
+    includeCSS {
+        slickCSS	= {$page.includeCSS.slickCSS}
+        uikit = {$page.includeCSS.uikit}
+        jQueryUiCss	= {$page.includeCSS.jQueryUiCss}
+        bootstrapCSS = {$page.includeCSS.bootstrapCSS}
+        mkhCSS = {$page.includeCSS.mkhCSS}
+    }
+
+    includeJSFooterlibs {
+  		jQueryTop	= {$page.includeJSFooterlibs.jQueryTop}
+        jQueryTop.forceOnTop = 1
+        jQueryUi	= {$page.includeJSFooterlibs.jQueryUi}
+        bootstrapJs = {$page.includeJSFooterlibs.bootstrapJs}
+        mkhJs = {$page.includeJSFooterlibs.mkhJs}
+        powermailJQuery >
+    }
+
+    meta {
+      description.field = description
+      abstract.field = abstract
+      keywords.field = keywords
+    }
+
+
+    10 = FLUIDTEMPLATE
+    10 {
+        #templateName = Default
+
+        templateName = TEXT
+        templateName.stdWrap.cObject = CASE
+        templateName.stdWrap.cObject { 
+				key.data = pagelayout 
+				key.ifEmpty.data = levelfield:-2, backend_layout_next_level, slide 
+				default = TEXT
+				default.value = Default
+				
+		} 
+
+        templateRootPaths.10 = EXT:mkhbasic/Resources/Private/Templates/Page/
+        partialRootPaths.10 = EXT:mkhbasic/Resources/Private/Partials/
+        layoutRootPaths.10 = EXT:mkhbasic/Resources/Private/Layouts/
+
+        variables {
+            logo = COA
+            logo {
+                wrap = <div class="uk-logo">|</div>
+                stdWrap.typolink.parameter = 1
+                10 = IMAGE
+                10.file = {$logo}
+                10.file.height = 60
+            }
+
+            template-marker-one < styles.content.get
+			template-marker-one.select.where = colPos = 1
+			
+			template-marker-two < styles.content.get
+			template-marker-two.select.where = colPos = 2
+			
+			template-marker-three < styles.content.get
+			template-marker-three.select.where = colPos = 3
+			
+			template-marker-four < styles.content.get
+			template-marker-four.select.where = colPos = 4
+
+			template-marker-five < styles.content.get
+			template-marker-five.select.where = colPos = 5
+        }
+    }
+
+    
+}
+
+
+#
+# Libs configs
+#
+lib {
+    keyvis < styles.content.get
+    keyvis.select.where = colPos = 1
+    keyvis.stdWrap.dataWrap = |
+
+    dynamicContent < styles.content.get
+    dynamicContent.stdWrap.dataWrap =  <!--TYPO3SEARCH_begin-->|<!--TYPO3SEARCH_end-->
+
+}
+
+lib.navigation = COA
+lib.navigation {
+   wrap = <nav class="navbar navbar-expand-lg pt-4">|</nav>
+   
+   10 = COA
+   10 {
+     10 = COA
+     10 {
+       wrap = <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">|</button>
+       10 = TEXT
+       10.value = <span class="navbar-toggler-icon"></span>
+     }
+   }
+    
+   20 = HMENU
+   20 {
+     wrap = <div class="collapse navbar-collapse" id="navbar"> <ul class="navbar-nav mr-auto"> | </ul> </div>
+           
+     1 = TMENU
+     1 {
+       expAll = 1
+    
+       NO = 1
+       NO {
+         ATagTitle.field = subtitle // title
+         wrapItemAndSub = <li class="nav-item">|</li>
+         ATagParams = class="nav-link"
+       }
+    
+       CUR < .NO
+       CUR {
+         wrapItemAndSub = <li class="nav-item active">|</li>
+       }
+    
+       ACT < .CUR
+  
+       IFSUB = 1
+       IFSUB {
+         ATagTitle.field = subtitle // title
+         ATagParams = class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+         ATagBeforeWrap = 1
+         wrapItemAndSub = <li class="nav-item dropdown">|</li>
+       }
+    
+       ACTIFSUB < .IFSUB
+       ACTIFSUB {
+         wrapItemAndSub = <li class="nav-item dropdown active">|</li>
+       }
+    
+       CURIFSUB < .ACTIFSUB
+     }
+    
+     2 < .1
+     2 {
+         wrap = <ul class="dropdown-menu">|</ul>
+         IFSUB = 0
+     }
+   }
+ }
+
+
+#
+# Lib footer
+#
+lib.footer = COA
+lib.footer {
+    10 = RECORDS
+    10 {
+        source = {$uid.footer}
+        tables = tt_content
+    }
+}
+
+
+
+#
+# Gridelements
+#
+
+tx_gridelements {
+    # TS Elemente haben Vorrang vor Datensätzen mit gleichen IDs
+    overruleRecords = 1
+
+    setup {
+        # Overlay
+        #-------------------------------------------------------------------------------
+        overlay {
+            title = Overlay
+            #icon = EXT:mkhbasic/Resources/Public/Images/BackendLayouts/default.gif
+            flexformDS = FILE:EXT:mkhbasic/Configuration/FlexForms/Extensions/GridElements/overlay.xml
+            config {
+               # backend_layout {
+                    colCount = 1
+                    rowCount = 1
+                    rows {
+                        1 {
+                            columns {
+                                1 {
+                                    name = overlay
+                                    colPos = 11
+                                }
+                            }
+                        }
+                    }
+               # }
+            }
+        }
+        4cols {
+            title = 4 Spalten
+            #icon = EXT:mkhbasic/Resources/Public/Images/BackendLayouts/default.gif
+            config {
+               # backend_layout {
+                    colCount = 4
+                    rowCount = 1
+                    rows {
+                        1 {
+                            columns {
+                                1 {
+                                    name = Links
+                                    colPos = 10
+                                }
+                                2 {
+                                    name = Links Mitte
+                                    colPos = 11
+                                }
+                                3 {
+                                    name = Rechts Mitte
+                                    colPos = 12
+                                }
+                                4 {
+                                    name = Rechts
+                                    colPos = 13
+                                }
+                            }
+                        }
+                    }
+                #}
+            }
+        }
+        # Card
+        #-------------------------------------------------------------------------------
+        card   {
+            title = Card
+            #icon = EXT:example_extension/Resources/Public/Images/BackendLayouts/default.gif
+            flexformDS = FILE:EXT:mkhbasic/Configuration/FlexForms/Extensions/GridElements/card.xml
+            config {
+               # backend_layout {
+                    colCount = 1
+                    rowCount = 1
+                    rows {
+                        1 {
+                            columns {
+                                1 {
+                                    name = Card
+                                    colPos = 10
+                                }
+                            }
+                        }
+                    }
+              #  }
+            }
+        }
+        # 2Cols
+        #-------------------------------------------------------------------------------
+        2cols {
+            title = 2 Spalten
+            #icon = EXT:example_extension/Resources/Public/Images/BackendLayouts/default.gif
+            flexformDS = FILE:EXT:mkhbasic/Configuration/FlexForms/Extensions/GridElements/2spalten.xml
+            config {
+               # backend_layout {
+                    colCount = 2
+                    rowCount = 1
+                    rows {
+                        1 {
+                            columns {
+                                1 {
+                                    name = Links
+                                    colPos = 10
+                                }
+                                2 {
+                                    name = Rechts
+                                    colPos = 11
+                                }
+                            }
+                        }
+                    }
+               # }
+            }
+        }
+        # 3Cols
+        #-------------------------------------------------------------------------------
+        3cols {
+            title = 3 Spalten
+            #icon = EXT:example_extension/Resources/Public/Images/BackendLayouts/default.gif
+            config {
+                #backend_layout {
+                    colCount = 3
+                    rowCount = 1
+                    rows {
+                        1 {
+                            columns {
+                                1 {
+                                    name = Links
+                                    colPos = 10
+                                }
+                                2 {
+                                    name = Mitte
+                                    colPos = 11
+                                }
+                                3 {
+                                    name = Rechts
+                                    colPos = 12
+                                }
+                            }
+                        }
+                    }
+             #   }
+            }
+        }
+        # 3Modul
+        #-------------------------------------------------------------------------------
+        modul {
+            title = Modul
+            #icon = EXT:example_extension/Resources/Public/Images/BackendLayouts/default.gif
+            flexformDS = FILE:EXT:mkhbasic/Configuration/FlexForms/Extensions/GridElements/modul.xml
+            config {
+              #  backend_layout {
+                    colCount = 1
+                    rowCount = 1
+                    rows {
+                        1 {
+                            columns {
+                                1 {
+                                    name = Content
+                                    colPos = 10
+                                }
+                            }
+                        }
+                    }
+             #   }
+            }
+        }
+        specialacc {
+            title = Akkordeon
+            #icon = EXT:example_extension/Resources/Public/Images/BackendLayouts/default.gif
+            flexformDS = FILE:EXT:mkhbasic/Resources/Private/Templates/Extensions/GridElements/special_accordion.xml
+            config {
+                colCount = 1
+                rowCount = 1
+                rows {
+                    1 {
+                        columns {
+                            1 {
+                                name = Akkordeon
+                                colPos = 10
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

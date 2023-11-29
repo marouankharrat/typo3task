@@ -1,0 +1,57 @@
+
+
+
+
+pid {
+    navigation {
+		home 		= 1
+	}
+}
+
+
+uid{
+    footer    = 11
+}
+
+plugin {
+    tx_mkhbasic {
+        view {
+            templateRootPaths.10 = EXT:mkhbasic/Resources/Private/Templates/
+            partialRootPaths.10 = EXT:mkhbasic/Resources/Private/Partials/
+            layoutRootPaths.10 = EXT:mkhbasic/Resources/Private/Layouts/
+        }
+    }
+
+    tx_gridelements {
+        view {
+            templateRootPath = EXT:mkhbasic/Resources/Private/Templates/_ext/GridElements/
+        }
+    }
+}
+
+
+styles.content.textmedia.maxW = 15000
+styles.content.textmedia.maxWInText = 15000
+styles.content.textmedia.linkWrap.width = 15000
+styles.content.textmedia.titleInLinkAndImg = 1
+
+
+#
+# page configurations
+#
+page {
+    includeCSS {
+        jQueryUiCss = EXT:mkhbasic/Resources/Public/Css/jquery-ui.min.css
+        bootstrapCSS= EXT:mkhbasic/Resources/Public/Css/bootstrap.min.css
+        mkhCSS = EXT:mkhbasic/Resources/Public/Css/mkh.css
+
+    }
+    includeJSFooterlibs {
+        jQueryTop = EXT:mkhbasic/Resources/Public/Js/jquery-3.7.1.min.js
+        jQueryUi = EXT:mkhbasic/Resources/Public/Js/jquery-ui.min.js
+        bootstrapJs = EXT:mkhbasic/Resources/Public/Js/bootstrap.bundle.min.js
+        mkhJs = EXT:mkhbasic/Resources/Public/Js/mkhJs.js
+    }
+    
+
+}

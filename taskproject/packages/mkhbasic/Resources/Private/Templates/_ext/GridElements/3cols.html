@@ -1,0 +1,14 @@
+<div id="c{data.uid}" class="uk-grid-large uk-child-width-expand@s" uk-grid>
+    <f:for each="{children}" as="rows">
+        <f:for each="{rows}" as="columns" iteration="columIter">
+        <f:comment>Lets just test if these get rendered, else we can use these to comment our templates</f:comment>
+            <div>
+                <f:for each="{columns}" as="singleCol">
+                    <f:if condition="{singleCol.data.CType}">
+                        <f:cObject typoscriptObjectPath="tt_content.{singleCol.data.CType}" data="{singleCol.data}" table="tt_content" />
+                    </f:if>
+                </f:for>
+            </div>
+        </f:for>
+    </f:for>
+</div>

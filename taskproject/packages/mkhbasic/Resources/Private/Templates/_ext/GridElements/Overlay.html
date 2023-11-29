@@ -1,0 +1,45 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<div id="c{data.uid}" {f:if(condition:'{data.flexform_twocols}==0',then:'class="desktop-height"')}>
+    <f:comment><div class="clearfix uk-overlay uk-overlay-default {data.flexform_addclass}
+{f:if(condition:'{data.flexform_positionM}==0',then:' uk-position-center')}
+{f:if(condition:'{data.flexform_positionM}==1',then:' uk-position-left')}
+{f:if(condition:'{data.flexform_positionM}==2',then:' uk-position-top')}
+{f:if(condition:'{data.flexform_positionM}==3',then:' uk-position-right')}
+{f:if(condition:'{data.flexform_positionM}==4',then:' uk-position-bottom')}
+{f:if(condition:'{data.flexform_positionS}==0',then:' uk-position-center@s')}
+{f:if(condition:'{data.flexform_positionS}==1',then:' uk-position-left@s')}
+{f:if(condition:'{data.flexform_positionS}==2',then:' uk-position-top@s')}
+{f:if(condition:'{data.flexform_positionS}==3',then:' uk-position-right@s')}
+{f:if(condition:'{data.flexform_positionS}==4',then:' uk-position-bottom@s')}
+{f:if(condition:'{data.flexform_widthL}==0',then:' uk-width-1-3@l')}
+{f:if(condition:'{data.flexform_widthL}==1',then:' uk-width-1-2@l')}
+{f:if(condition:'{data.flexform_widthL}==2',then:' uk-width-1-1@l')}
+{f:if(condition:'{data.flexform_widthM}==0',then:' uk-width-1-3@m')}
+{f:if(condition:'{data.flexform_widthM}==1',then:' uk-width-1-2@m')}
+{f:if(condition:'{data.flexform_widthM}==2',then:' uk-width-1-1@m')}
+{f:if(condition:'{data.flexform_widthS}==0',then:' uk-width-1-3@s')}
+{f:if(condition:'{data.flexform_widthS}==1',then:' uk-width-1-2@s')}
+{f:if(condition:'{data.flexform_widthS}==2',then:' uk-width-1-1@s')}"></f:comment>
+    <div class="clearfix my-overlay {data.flexform_addclass}">
+
+        <f:comment><f:for each="{data.tx_gridelements_view_columns}" iteration="columIter" as="singleCol">
+            <f:format.raw>
+                {singleCol}
+            </f:format.raw>
+        </f:for></f:comment>
+        <f:if condition="{children}">
+            <f:then>
+                <a id="c{data.uid}"></a>
+                <f:if condition="{data._LOCALIZED_UID}">
+                    <a id="c{data._LOCALIZED_UID}"></a>
+                </f:if>
+                <f:render partial="Container" arguments="{_all}" optional="true"/>
+            </f:then>
+            <f:else>
+                <f:if condition="{data.CType}">
+                    <f:cObject typoscriptObjectPath="tt_content.{data.CType}" data="{data}" table="tt_content" />
+                </f:if>
+            </f:else>
+        </f:if>
+    </div>
+</div>

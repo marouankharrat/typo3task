@@ -1,0 +1,25 @@
+
+<div id="c{data.uid}" class="cols2 container-fluid doubleimage clearfix {f:if(condition: '{data.layout}>=1', then: 'layout{data.layout}')}">
+     <div class="row">
+            <f:for each="{data.tx_gridelements_view_columns}" iteration="columIter" as="singleCol">
+                <f:comment>Lets just test if these get rendered, else we can use these to comment our templates</f:comment>
+                <f:if condition="{columIter.isOdd}">
+                    <f:then>
+                        <div class="topImage">
+                            <f:format.raw>
+                                {singleCol}
+                            </f:format.raw>
+                        </div>
+                    </f:then>
+                    <f:else>
+                        <div class="overlay">
+                            <div class="slideHandle"></div>
+                            <f:format.raw>
+                                {singleCol}
+                            </f:format.raw>
+                        </div>
+                    </f:else>
+                </f:if>
+            </f:for>
+     </div>
+</div>

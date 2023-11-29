@@ -1,0 +1,18 @@
+
+<div id="accordion_{data.uid} c{data.uid}" class="accordion panel-group clearfix {f:if(condition: '{data.flexform_openfirst} == 1', then: 'openfirst')}">
+    <f:if condition="{data.tx_gridelements_view_columns.10} == ''">
+        <p class="bodytext"><f:translate key="no_content" extensionName="gridelements" /></p>
+    </f:if>
+    <f:for each="{data.tx_gridelements_view_columns}" iteration="columIter" as="singleChild">
+        <f:comment>
+            This is a free for us Comment area, wont get rendered !
+            Wir haben nun alle Child elemente als array wo wir auch alles elemente ansprechen können, sowie die columns als fulltext
+        </f:comment>
+
+                    <f:format.raw>
+                        {singleChild}
+                    </f:format.raw>
+
+
+    </f:for>
+</div>

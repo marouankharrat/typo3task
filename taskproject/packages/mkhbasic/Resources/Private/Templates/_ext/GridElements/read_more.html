@@ -1,0 +1,24 @@
+<div id="c{data.uid}" class="read_more {f:if(condition: '{data.layout}==1', then: 'layout1')} clearfix">
+    <f:for each="{data.tx_gridelements_view_columns}" iteration="columIter" as="singleCol">
+        <f:comment>Lets just test if these get rendered, else we can use these to comment our templates</f:comment>
+        <f:if condition="{columIter.isOdd}">
+            <f:then>
+                <div class="col-lg-12 col-sm-12">
+                    <f:format.raw>
+                        {singleCol}
+                    </f:format.raw>
+                </div>
+            </f:then>
+            <f:else>
+                <div class="collapse col-lg-12 col-sm-12" id="readmore{data.uid}">
+                    <f:format.raw>
+                        {singleCol}
+                    </f:format.raw>
+                </div>
+            </f:else>
+        </f:if>
+    </f:for>
+    <div class="col-lg-12 col-sm-12 {f:if(condition:'{data.flexform_button_right} == 1', then: 'text-right')}">
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#readmore{data.uid}" aria-expanded="true" aria-controls="collapseExample" data-exchangetext="{data.flexform_buttonlabel_open}">{data.flexform_buttonlabel}</button>
+    </div>
+</div>

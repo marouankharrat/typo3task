@@ -1,0 +1,22 @@
+<div id="c{data.uid}" class="uk-card uk-card-body{f:if(condition: '{data.layout}>=1', then: ' layout{data.layout}')}
+{f:if(condition: '{data.flexform_background}==1', then: ' uk-card-default')}
+{f:if(condition: '{data.flexform_background}==2', then: ' uk-card-primary')}
+{f:if(condition: '{data.flexform_background}==3', then: ' uk-card-secondary')}
+{f:if(condition: '{data.flexform_hover}==1', then: ' uk-card-hover')}
+{f:if(condition: '{data.flexform_padding}==0', then: ' uk-card-small')}
+{f:if(condition: '{data.flexform_padding}==1', then: ' uk-card-large')}">
+    <f:for each="{data.tx_gridelements_view_columns}" iteration="columIter" as="singleCol">
+        <f:comment>Lets just test if these get rendered, else we can use these to comment our templates</f:comment>
+        <f:if condition="{data.header}">
+            <h3 class="uk-card-title"><f:format.raw>{data.header}</f:format.raw></h3>
+        </f:if>
+        <f:format.raw>
+            {singleCol}
+        </f:format.raw>
+    </f:for>
+    <f:if condition="{data.flexform_cardbtn}">
+        <button class="uk-button{f:if(condition: '{data.flexform_btnbackground}==1', then: 'uk-button-primary')}{f:if(condition:'{data.flexform_btnbackground}==2', then:' uk-button-secondary')}" type="button" uk-toggle="target: #modal-overlay">
+            <f:link.typolink parameter="{data.flexform_btnlink}"><f:format.raw>{data.flexform_cardbtn}</f:format.raw></f:link.typolink>
+        </button>
+    </f:if>
+</div>

@@ -36,9 +36,23 @@ return [
             'loginLogo' => '',
             'loginLogoAlt' => '',
         ],
+        'extension_builder' => [
+            'backupDir' => 'var/tx_extensionbuilder/backups',
+            'backupExtension' => '1',
+            'enableRoundtrip' => '1',
+        ],
         'extensionmanager' => [
             'automaticInstallation' => '1',
             'offlineMode' => '0',
+        ],
+        'gridelements' => [
+            'additionalStylesheet' => '',
+            'disableAutomaticUnusedColumnCorrection' => '0',
+            'disableCopyFromPageButton' => '0',
+            'disableDragInWizard' => '0',
+            'fluidBasedPageModule' => '0',
+            'nestingInListModule' => '0',
+            'overlayShortcutTranslation' => '0',
         ],
     ],
     'FE' => [

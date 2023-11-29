@@ -1,0 +1,29 @@
+<html
+  xmlns="http://www.w3.org/1999/xhtml"
+  lang="en"
+  xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+>
+  <f:layout name="Page" />
+  <f:section name="Main">
+    <header class="container heade_page">
+      <div class="row">
+        <div class="col-md-3 col-sm-6">
+          <f:cObject typoscriptObjectPath="lib.logoTest" />
+        </div>
+        <div class="col-md-9 col-sm-6">
+          <f:cObject typoscriptObjectPath="lib.navigation" />
+        </div>
+      </div>
+    </header>
+
+    <div class="container content_page pt-5 pb-5">
+      <f:cObject typoscriptObjectPath="lib.keyvis" data="{colPos: '1'}" />
+    </div>
+
+    <footer>
+      <div class="container footer_page">
+        <f:cObject typoscriptObjectPath="lib.footer" />
+      </div>
+    </footer>
+  </f:section>
+</html>

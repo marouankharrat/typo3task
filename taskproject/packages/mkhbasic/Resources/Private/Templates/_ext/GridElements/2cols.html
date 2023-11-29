@@ -1,0 +1,37 @@
+<div id="c{data.uid}" class="uk-grid uk-grid-large clearfix row {f:if(condition: '{data.layout}>=1', then: 'layout{data.layout}')}">
+            <f:for each="{children}" as="rows">
+                <f:for each="{rows}" as="columns" iteration="columIter">
+                    <f:comment>Lets just test if these get rendered, else we can use these to comment our templates</f:comment>
+                    <f:if condition="{columIter.isOdd}">
+                        <f:then>
+                            <div class="{f:if(condition: '{data.flexform_spaltentyp}==75', then: 'uk-width-2-3@m')}
+                                        {f:if(condition: '{data.flexform_spaltentyp}==50', then: 'uk-width-1-2@m')}
+                                        {f:if(condition: '{data.flexform_spaltentyp}==25', then: 'uk-width-1-3@m')}
+                                        {f:if(condition: '{data.flexform_spaltentypSmall}==1', then: 'uk-width-1-1@s')}
+                                        {f:if(condition: '{data.flexform_spaltentypSmall}==2', then: 'uk-width-1-2@s')}
+                             odd">
+                                <f:for each="{columns}" as="singleCol">
+                                    <f:if condition="{singleCol.data.CType}">
+                                        <f:cObject typoscriptObjectPath="tt_content.{singleCol.data.CType}" data="{singleCol.data}" table="tt_content" />
+                                    </f:if>
+                                </f:for>
+                            </div>
+                        </f:then>
+                        <f:else>
+                            <div class="{f:if(condition: '{data.flexform_spaltentyp}==75', then: 'uk-width-1-3@m')}
+                                        {f:if(condition: '{data.flexform_spaltentyp}==50', then: 'uk-width-1-2@m')}
+                                        {f:if(condition: '{data.flexform_spaltentyp}==25', then: 'uk-width-2-3@m')}
+                                        {f:if(condition: '{data.flexform_spaltentypSmall}==1', then: 'uk-width-1-1@s')}
+                                        {f:if(condition: '{data.flexform_spaltentypSmall}==2', then: 'uk-width-1-2@s')}
+                             even">
+                                <f:for each="{columns}" as="singleCol">
+                                    <f:if condition="{singleCol.data.CType}">
+                                        <f:cObject typoscriptObjectPath="tt_content.{singleCol.data.CType}" data="{singleCol.data}" table="tt_content" />
+                                    </f:if>
+                                </f:for>
+                            </div>
+                        </f:else>
+                    </f:if>
+                </f:for>
+            </f:for>
+</div>

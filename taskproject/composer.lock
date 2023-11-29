@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8e38d3aed3f17f9ee095a3ffe43711bd",
+    "content-hash": "d1957c2d3e2f2bf189160f17a0038de6",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -845,6 +845,137 @@
             "time": "2022-02-21T09:13:59+00:00"
         },
         {
+            "name": "friendsoftypo3/extension-builder",
+            "version": "v11.0.11",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfTYPO3/extension_builder.git",
+                "reference": "9a500dbb4c5cf9f5311f75e1e280cd358054e425"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfTYPO3/extension_builder/zipball/9a500dbb4c5cf9f5311f75e1e280cd358054e425",
+                "reference": "9a500dbb4c5cf9f5311f75e1e280cd358054e425",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "nikic/php-parser": "^4.10.4",
+                "php": "^7.4 || ^8.0",
+                "typo3/cms-backend": "^11.4",
+                "typo3/cms-core": "^11.4"
+            },
+            "replace": {
+                "typo3-ter/extension-builder": "self.version"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.18",
+                "roave/security-advisories": "dev-latest",
+                "sebastian/diff": "^3.0",
+                "typo3/cms-frontend": "^11.4",
+                "typo3/cms-install": "^11.4",
+                "typo3/coding-standards": "^0.3.0",
+                "typo3/testing-framework": "^6.11"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/cms": {
+                    "extension-key": "extension_builder",
+                    "app-dir": ".Build",
+                    "ignore-as-root": false,
+                    "web-dir": ".Build/Web"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "EBT\\ExtensionBuilder\\": "Classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Nico de Haen",
+                    "role": "Developer"
+                },
+                {
+                    "name": "extension_builder Development Team",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Tool to kickstart and maintain TYPO3 extensions",
+            "homepage": "https://extensions.typo3.org/extension/extension_builder",
+            "keywords": [
+                "extension",
+                "extension_builder",
+                "typo3"
+            ],
+            "support": {
+                "docs": "https://docs.typo3.org/p/friendsoftypo3/extension-builder/main/en-us/",
+                "issues": "https://github.com/FriendsOfTYPO3/extension_builder/issues",
+                "source": "https://github.com/FriendsOfTYPO3/extension_builder"
+            },
+            "time": "2023-10-18T07:38:08+00:00"
+        },
+        {
+            "name": "gridelementsteam/gridelements",
+            "version": "11.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/CodersCare/gridelements.git",
+                "reference": "e99d02059a00ab1df9d852fc4b2144c17e841f4f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/CodersCare/gridelements/zipball/e99d02059a00ab1df9d852fc4b2144c17e841f4f",
+                "reference": "e99d02059a00ab1df9d852fc4b2144c17e841f4f",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4 || ^8.0 || ^8.1 || ^8.2",
+                "typo3/cms-backend": "^10.4 || ^11.5",
+                "typo3/cms-core": "^10.4 || ^11.5",
+                "typo3/cms-frontend": "^10.4 || ^11.5",
+                "typo3/cms-recordlist": "^10.4 || ^11.5"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.1.0",
+                "friendsoftypo3/phpstan-typo3": "^0.8.1",
+                "phpstan/phpstan": "^0.12.99"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/cms": {
+                    "extension-key": "gridelements"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GridElementsTeam\\Gridelements\\": "Classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "description": "This TYPO3 extension extends the grid-based concept known from the backend layout of pages to regular content elements - the grid elements. It offers a lot of new features like advanced drag & drop or real references, that improve the usability of the page and list module to speed up the daily work with the backend.",
+            "homepage": "https://extensions.typo3.org/extension/gridelements",
+            "keywords": [
+                "Gridelements",
+                "TYPO3 CMS",
+                "grids"
+            ],
+            "support": {
+                "chat": "https://typo3.slack.com/archives/C037AHC38",
+                "docs": "https://docs.typo3.org/p/gridelementsteam/gridelements/main/en-us/",
+                "issues": "https://gitlab.com/coderscare/gridelements/-/issues",
+                "source": "https://gitlab.com/coderscare/gridelements"
+            },
+            "time": "2023-08-02T10:50:40+00:00"
+        },
+        {
             "name": "guzzlehttp/guzzle",
             "version": "7.8.0",
             "source": {
@@ -1386,6 +1517,57 @@
             "time": "2023-01-12T14:26:00+00:00"
         },
         {
+            "name": "laxap/bootstrap-grids",
+            "version": "3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laxap/bootstrap_grids.git",
+                "reference": "b6b38244a1dfd1f08cfd726b5892f608c8e12a92"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laxap/bootstrap_grids/zipball/b6b38244a1dfd1f08cfd726b5892f608c8e12a92",
+                "reference": "b6b38244a1dfd1f08cfd726b5892f608c8e12a92",
+                "shasum": ""
+            },
+            "require": {
+                "gridelementsteam/gridelements": "^10 || ^11.0.0",
+                "php": "^7.4 || ^8.0",
+                "typo3/cms-core": "^10.4 || ^11.5"
+            },
+            "replace": {
+                "typo3-ter/bootstrap-grids": "self.version"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/cms": {
+                    "extension-key": "bootstrap_grids"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Laxap\\BootstrapGrids\\": "Classes"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "description": "Gridelements for bootstrap v5. Column grids, tabs and accordion.",
+            "homepage": "https://extensions.typo3.org/extension/bootstrap_grids/",
+            "keywords": [
+                "Gridelements",
+                "TYPO3 CMS",
+                "bootstrap",
+                "typo3"
+            ],
+            "support": {
+                "issues": "https://github.com/laxap/bootstrap_grids/issues",
+                "source": "https://github.com/laxap/bootstrap_grids/tree/3.0.0"
+            },
+            "time": "2023-09-17T12:59:22+00:00"
+        },
+        {
             "name": "lolli42/finediff",
             "version": "1.0.2",
             "source": {
@@ -1516,6 +1698,59 @@
                 "source": "https://github.com/Masterminds/html5-php/tree/2.8.1"
             },
             "time": "2023-05-10T11:58:31+00:00"
+        },
+        {
+            "name": "mkhbasic/mkhbasic",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "./packages/mkhbasic",
+                "reference": "db64cefdd786b350d246d68a0a8be9614e39a094"
+            },
+            "require": {
+                "typo3/cms-core": "^11.5"
+            },
+            "replace": {
+                "typo3-ter/mkhbasic": "self.version"
+            },
+            "require-dev": {
+                "typo3/testing-framework": "^6.9.0"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/cms": {
+                    "web-dir": ".Build/Web",
+                    "extension-key": "mkhbasic"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Mkhbasic\\Mkhbasic\\": "Classes"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Mkhbasic\\Mkhbasic\\Tests\\": "Tests"
+                }
+            },
+            "scripts": {
+                "post-autoload-dump": [
+                    "TYPO3\\TestingFramework\\Composer\\ExtensionTestEnvironment::prepare"
+                ]
+            },
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Marouan Kharrat",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Basic Extension by MKh",
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "nikic/php-parser",
@@ -7070,7 +7305,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "mkhbasic/mkhbasic": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

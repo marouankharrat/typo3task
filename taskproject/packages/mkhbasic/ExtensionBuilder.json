@@ -1,0 +1,42 @@
+{
+    "modules": [],
+    "properties": {
+        "backendModules": [],
+        "description": "Basic Extension by MKh",
+        "emConf": {
+            "category": "plugin",
+            "custom_category": "",
+            "dependsOn": "typo3 => 11.5.0-11.5.99\n",
+            "disableLocalization": false,
+            "disableVersioning": true,
+            "generateDocumentationTemplate": false,
+            "generateEditorConfig": false,
+            "generateEmptyGitRepository": false,
+            "sourceLanguage": "en",
+            "state": "alpha",
+            "targetVersion": "11.5.0-11.5.99",
+            "version": "1.0.0"
+        },
+        "extensionKey": "mkhbasic",
+        "name": "mkhbasic",
+        "originalExtensionKey": "",
+        "originalVendorName": "",
+        "persons": [
+            {
+                "company": "",
+                "email": "kharrat_marouan.info@yahoo.com",
+                "name": "Marouan Kharrat",
+                "role": "Developer"
+            }
+        ],
+        "plugins": [],
+        "vendorName": "Mkhbasic"
+    },
+    "wires": [],
+    "storagePath": "\/Applications\/MAMP\/htdocs\/typo3task\/typo3task\/taskproject\/packages\/",
+    "log": {
+        "last_modified": "2023-11-29 11:09",
+        "extension_builder_version": "v11.0.11",
+        "be_user": " (1)"
+    }
+}

@@ -1,0 +1,21 @@
+<div id="c{data.uid}" class="cols3 row clearfix">
+    <f:for each="{data.tx_gridelements_view_columns}" iteration="columIter" as="singleCol">
+        <f:comment>Lets just test if these get rendered, else we can use these to comment our templates</f:comment>
+        <f:if condition="{columIter.isOdd}">
+            <f:then>
+                <div class="col-lg-4  col-md-4 col-sm-4 col-xs-12 odd">
+                    <f:format.raw>
+                        {singleCol}
+                    </f:format.raw>
+                </div>
+            </f:then>
+            <f:else>
+                <div class="col-lg-4  col-md-4 col-sm-4 col-xs-12 even">
+                    <f:format.raw>
+                        {singleCol}
+                    </f:format.raw>
+                </div>
+            </f:else>
+        </f:if>
+    </f:for>
+</div>
