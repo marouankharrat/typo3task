@@ -42,7 +42,10 @@ class LinktableController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContro
      */
     public function listAction(): \Psr\Http\Message\ResponseInterface
     {
+        // Declate Current Time to this Month
         $currentMonth = date('m');
+        
+        // add findByMonth and make the parameter currentMonth as Condtion and set the limit to 1
         $linktables = $this->linktableRepository->findByMonth($currentMonth)->getQuery()->setLimit(1)->execute();
         $this->view->assign('linktables', $linktables);
         return $this->htmlResponse();
