@@ -1,5 +1,5 @@
 # typo3task
-Typo3 11 + Extenstion "Link of the month" display on a page
+Typo3 11 + Extension "Link of the month" display on a page
 
 # Link of the month
 
